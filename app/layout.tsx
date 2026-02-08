@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     type: 'website',
     url: WEBSITE_URL,
     siteName: 'Žan Konečnik',
-    title: 'Žan Konečnik — Web & Digital Marketing',
+    title: 'Žan Konečnik — Web Development & Digital Marketing',
     description:
       'Custom-built web solutions paired with data-backed digital marketing — designed to get results, not just clicks.',
     locale: 'en',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Žan Konečnik — Web & Digital Marketing',
+    title: 'Žan Konečnik — Web Development & Digital Marketing',
     description:
       'Custom-built web solutions paired with data-backed digital marketing — designed to get results, not just clicks.',
   },
