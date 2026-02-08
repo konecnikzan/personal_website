@@ -4,6 +4,7 @@ import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
+import { WEBSITE_URL } from '@/lib/constants'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -12,16 +13,54 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nim-fawn.vercel.app/'),
+  metadataBase: new URL(WEBSITE_URL),
   alternates: {
-    canonical: '/'
+    canonical: '/',
   },
   title: {
-    default: 'Nim - Personal website template',
-    template: '%s | Nim'
+    default: 'Žan Konečnik',
+    template: '%s | Žan Konečnik',
   },
-  description:  'Nim is a free and open-source personal website template built with Next.js 15, React 19 and Motion-Primitives.',
-};
+  description:
+    'Custom-built web solutions paired with data-backed digital marketing — designed to get results, not just clicks.',
+  keywords: [
+    'web development',
+    'digital marketing',
+    'freelance developer',
+    'Slovenia',
+    'web design',
+    'SEO',
+  ],
+  authors: [{ name: 'Žan Konečnik', url: WEBSITE_URL }],
+  creator: 'Žan Konečnik',
+  openGraph: {
+    type: 'website',
+    url: WEBSITE_URL,
+    siteName: 'Žan Konečnik',
+    title: 'Žan Konečnik — Web & Digital Marketing',
+    description:
+      'Custom-built web solutions paired with data-backed digital marketing — designed to get results, not just clicks.',
+    locale: 'en',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Žan Konečnik — Web & Digital Marketing',
+    description:
+      'Custom-built web solutions paired with data-backed digital marketing — designed to get results, not just clicks.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  verification: {
+    // Add when you have them: google: 'your-google-verification-code',
+    // yandex: 'your-yandex-verification-code',
+  },
+}
 
 const geist = Geist({
   variable: '--font-geist',
@@ -33,6 +72,17 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Žan Konečnik',
+  url: WEBSITE_URL,
+  description:
+    'Custom-built web solutions paired with data-backed digital marketing — designed to get results, not just clicks.',
+  jobTitle: 'Web Developer & Digital Marketing',
+  knowsAbout: ['Web Development', 'Digital Marketing', 'Web Design', 'SEO'],
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,6 +90,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <meta name="apple-mobile-web-app-title" content="Žan Konečnik" />
+      </head>
       <body
         className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
       >
