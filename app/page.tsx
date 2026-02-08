@@ -118,7 +118,12 @@ export default function Personal() {
               "
             >
               <Spotlight
-                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
+                className="
+                  from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl 
+                  dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50
+                  pointer-events-none
+                  hidden md:block   {/* ← fixes mobile square */}
+                "
                 size={64}
               />
 
