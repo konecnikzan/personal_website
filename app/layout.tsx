@@ -98,6 +98,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <meta name="apple-mobile-web-app-title" content="Žan Konečnik" />
+        <meta property="og:image" content="/opengraph-image.png"></meta>
       </head>
       <body
         className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
